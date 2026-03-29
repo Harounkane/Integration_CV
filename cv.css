@@ -1,295 +1,145 @@
-/*STYLES GENERAUX*/
-*{
-    font-family: Avenir, sans-serif;
-    padding: 0px;
-    margin: 0px;
-    text-align: justify;
+/* VARIABLES ET RESET */
+:root {
+    --primary: #2563eb;    /* Bleu moderne */
+    --secondary: #1e293b;  /* Ardoise foncée */
+    --accent: #f59e0b;     /* Ambre pour les boutons */
+    --bg-body: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-body{
-    background: #ededed;
-}
-p{
-    font-size: 1em;
-    line-height: 1.5em;
-}
-a{
-    text-decoration: none;
-    color: #000;
+    font-family: 'Inter', -apple-system, sans-serif;
 }
 
-/*HEADER & FOOTER*/
-header, footer{
-    width: 100%;
-    padding: 20px 0px;
-    background: url("cvimg.png") #4f4f4f;
-    box-shadow: 0px 0px 15px #333;
+body {
+    background: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
 }
-header{
-    border-bottom: 2px solid #fff;
-    height: 120px;
-}
-header h1{
+
+/* HEADER & FOOTER */
+header {
+    background: var(--secondary);
     color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 4px solid var(--primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+footer {
+    background: var(--secondary);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--secondary);
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+    margin-bottom: 25px;
     font-size: 1.5em;
-    width: 90%;
-    margin: 0 auto;
 }
 
-footer{
-    border-top: 2px solid #fff;
-}
-footer p{
-    width: 90%;
-    margin: 0 auto;
-    color: #fff;
-    text-align: center;
-}
-footer a{
-    color: #fff;
+/* INFOS & PHOTO */
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
 }
 
-/*SECTIONS*/
-section{
-    display: flex; 
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
-    padding-bottom: 20px;
-    margin: 20px auto;
-    box-shadow: 0px 0px 10px #bbb;
-    background-color: #fff;
-}
-
-section h2{
-    margin: 20px 0;
-    width: 90%;
-}
-section > div{
-    width: 90%;
-}
-
-/*SECTION INFOS*/
-.photo{
-    text-align: center;
-}
-.photo img{
+.photo img {
     width: 150px;
     height: 150px;
-    border: 3px solid #fff;
-    box-shadow: 0px 0px 10px #777;
     border-radius: 50%;
-    margin-top: -80px;
-}
-.prez{
-    border-bottom: 2px dashed #ccc;
-}
-.prez a{
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin: 10px auto 30px auto;
-    color: #fff;
-    background-color: #EA0;
-    box-shadow: 0px 0px 10px #ccc;
-    border-radius: 5px;
-}
-.contact-flex{
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-}
-.contact-flex p:first-child{
-    flex: 0 0 40%;
-}
-.contact-flex p:last-child{
-    flex: 0 0 60%;
-}
-.social{
-    display: flex;
-    justify-content: space-around;
-    margin: 10px auto 0px auto;
-}
-.social img{
-    width: 40px;
-    height: 40px;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    /* Effet de flottement pour le dynamisme */
+    margin-top: -60px; 
 }
 
-/*SECTION EXP ET FORMATION*/
-.exp{
-    display: flex;
-    flex-flow: row wrap;
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-.exp-info{
-    display: flex;
-    flex-flow: column wrap;
-}
-.exp-logo{
-    flex: 0 0 25%;
-    max-width: 100px;
-}
-.exp-info{
-    flex: 0 0 70%;
-    margin-left: auto;
-}
-.exp img{
-    width: 100%;
-}
-.exp h3{
-    font-size:  1.2em;
-}
-.exp h4{
-    font-size:  1em;
-    font-weight: normal;
+.prez a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.2s;
 }
 
-/*SECTION COMPETENCES*/
-.h3gauche{
-    width: 90%;
-}
-.comp{
-    display:flex;
-    flex-flow: row wrap;
-    margin-bottom: 10px;
-}
-.comp p{
-    flex: 0 0 40%;
-}
-.conteneur-barre{
-    flex: 0 0 60%;
-    border-radius: 5px;
-    background-color: grey;
-    border-bottom: 1px ridge grey;
-}
-.barre{
-    display: block;
-    height: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-.c85{
-    width: 85%;
-    background-color: rgb(68, 187, 136);
-}
-.c90{
-    width: 50%;
-    background-color: #4B8;
-}
-.c95{
-    width: 60%;
-    background-color: #4B8;
-}
-.c100{
-    width: 80%;
-    background-color: #4B8;
-    border-radius: 5px;
-}
-.comp2{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-.conteneur-barre2{
-    flex: 0 0 100%;
-    height: 0.5em;
-    margin-bottom: 0.25em;
-    border-radius: 5px;
-    background-color: grey;
+.prez a:hover {
+    transform: translateY(-2px);
+    background: #1d4ed8;
 }
 
-/*SECTION INTERETS*/
-.interet{
-    flex: 0 1 50%;
+/* EXPERIENCES */
+.exp {
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    margin-bottom: 20px;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
 }
-.interet img{
+
+.exp-logo img {
     width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 15px #555;
+    height: auto;
+    filter: grayscale(20%);
 }
 
-/*VERSION BUREAU DU CV*/
-@media screen and (min-width: 980px){
-    section{
-        width: 80%;
-        box-shadow: 0px 0px 10px #bbb;
-    }
-    a:hover{
-        color: #EA0;
-    }
-    header h1{
-        width: 80%;
-    }
-    .prez, .contact{
-        flex: 0 0 45%;
-    }
-    .prez{
-        border-bottom: none;
-        border-right: 2px solid #ccc;
-        padding-right: 20px;
-        margin-left: auto;
-    }
-    .contact{
-        padding-left: 20px;
-        margin-right: auto;
-    }
-    .prez a{
-        border: 2px solid transparent;
-    }
-    .prez a:hover{
-        color: #f28835;
-        background-color: #fff;
-        border: 2px solid #f28835;
-        box-shadow: 0px 0px 20px #666;
-    }
-    .exp-logo{
-        flex: 0 0 10%;
-    }
-    .exp-info, .exp-desc{
-        flex: 0 0 85%;
-        margin-left: auto;
-    }
-    .interet{
-        flex: 0 1 25%;
+.exp h3 { color: var(--primary); }
+
+/* COMPÉTENCES (BARRES RÉELLES) */
+.comp {
+    margin-bottom: 15px;
+}
+
+.conteneur-barre {
+    width: 100%;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.barre {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), #60a5fa);
+    display: block;
+}
+
+/* RESPONSIVE BUREAU */
+@media (min-width: 768px) {
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
     }
 }
-    .container {
-     max-width: 600px;
-     margin: 0 auto;
-     padding: 20px;
- }
-
-    input[type="text"],
-    textarea {
-     width: 100%;
-     padding: 10px;
-     margin-bottom: 10px;
-     border: 1px solid #493aca;
-     border-radius: 4px;
-     box-sizing: border-box;
- }
-
-    textarea {
-     height: 150px;
- }
-
-    input[type="submit"] {
-     background-color: #4CAF50;
-     color: white;
-     padding: 10px 20px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     font-size: 16px;
- }
-
-    input[type="submit"]:hover {
-     background-color: #45a049;
- }
